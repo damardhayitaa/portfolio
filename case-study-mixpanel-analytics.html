@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Case Study: Making Analytics Trustworthy — Damar Dhayita, Product Manager">
+<title>Case Study — Making Analytics Actually Trustworthy · Damar Dhayita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --cream:#f5f2ec;--cream2:#ede9e0;
+  --ink:#1a1714;--ink2:#3d3a35;--muted:#7a7570;--hint:#b0aca5;
+  --border:#ddd9d0;--white:#ffffff;
+  --purple:#6d4aff;--purple-light:#ede8ff;
+  --green:#00a878;--green-light:#e0f7f1;
+  --yellow:#f5b800;--yellow-light:#fff8e0;
+  --orange:#ff6b35;--orange-light:#fff0eb;
+  --pink:#ff4d8d;--pink-light:#ffe8f1;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2.5rem;border-bottom:1px solid var(--border);background:rgba(245,242,236,0.92);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+.nav-back{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--muted);font-size:0.82rem;font-weight:500;transition:color .2s;}
+.nav-back:hover{color:var(--ink);}
+.nav-back svg{width:14px;height:14px;}
+.nav-title{font-size:0.82rem;color:var(--muted);}
+.hero{max-width:780px;margin:0 auto;padding:5rem 2.5rem 3rem;}
+.cs-tag{display:inline-flex;align-items:center;gap:6px;background:var(--purple-light);color:var(--purple);border-radius:999px;padding:5px 14px;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.1;letter-spacing:-0.01em;margin-bottom:1.25rem;}
+.hero h1 em{color:var(--purple);font-style:italic;}
+.hero-sub{font-size:1.05rem;color:var(--ink2);line-height:1.75;max-width:560px;margin-bottom:2.5rem;}
+.meta-row{display:flex;flex-wrap:wrap;gap:1rem;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.meta-item{flex:1;min-width:120px;}
+.meta-label{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--hint);margin-bottom:4px;}
+.meta-val{font-size:0.88rem;font-weight:500;color:var(--ink);}
+.impact-banner{background:var(--ink);color:#fff;border-radius:20px;padding:2rem 2.5rem;margin:3rem auto;max-width:780px;}
+.banner-label{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;}
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.5rem;}
+.impact-item .num{font-family:'DM Serif Display',serif;font-size:2.2rem;line-height:1;margin-bottom:4px;}
+.impact-item .desc{font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.4;}
+.content{max-width:680px;margin:0 auto;padding:0 2.5rem 6rem;}
+.section{margin-bottom:3.5rem;}
+.section-num{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--hint);margin-bottom:0.5rem;}
+.section h2{font-family:'DM Serif Display',serif;font-size:1.7rem;line-height:1.2;color:var(--ink);margin-bottom:1.25rem;}
+.section p{font-size:0.92rem;color:var(--ink2);line-height:1.8;margin-bottom:1rem;}
+.section p:last-child{margin-bottom:0;}
+.callout{border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.callout-purple{background:var(--purple-light);border-left:3px solid var(--purple);}
+.callout-yellow{background:var(--yellow-light);border-left:3px solid var(--yellow);}
+.callout-green{background:var(--green-light);border-left:3px solid var(--green);}
+.callout-orange{background:var(--orange-light);border-left:3px solid var(--orange);}
+.callout-pink{background:var(--pink-light);border-left:3px solid var(--pink);}
+.callout-label{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.callout-purple .callout-label{color:var(--purple);}
+.callout-yellow .callout-label{color:#9a7200;}
+.callout-green .callout-label{color:var(--green);}
+.callout-orange .callout-label{color:var(--orange);}
+.callout-pink .callout-label{color:var(--pink);}
+.callout p{font-size:0.88rem;color:var(--ink2);line-height:1.7;margin:0;}
+.problem-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin:1.25rem 0;}
+.problem-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;color:var(--ink2);line-height:1.6;}
+.problem-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--purple);flex-shrink:0;margin-top:0.55em;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.highlight-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+.highlight-card .hc-label{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.highlight-card h4{font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.highlight-card p{font-size:0.8rem;color:var(--muted);line-height:1.6;margin:0;}
+.process-steps{display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0;}
+.step{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--purple);color:#fff;font-size:0.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-body h4{font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.step-body p{font-size:0.82rem;color:var(--muted);line-height:1.6;margin:0;}
+.pull-quote{font-family:'DM Serif Display',serif;font-size:1.35rem;font-style:italic;color:var(--ink);line-height:1.5;border-left:3px solid var(--purple);padding:0.75rem 0 0.75rem 1.5rem;margin:2rem 0;}
+.outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.outcome-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+.outcome-card .oc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;}
+.outcome-card h4{font-size:0.88rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.outcome-card p{font-size:0.8rem;color:var(--muted);line-height:1.5;margin:0;}
+.lessons{display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0;}
+.lesson{display:grid;grid-template-columns:auto 1fr;gap:1rem;}
+.lesson-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--hint);line-height:1;padding-top:2px;}
+.lesson-body h4{font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.lesson-body p{font-size:0.82rem;color:var(--muted);line-height:1.6;margin:0;}
+.tools-row{display:flex;flex-wrap:wrap;gap:8px;margin:1rem 0;}
+.tool-badge{background:#fff;border:1px solid var(--border);border-radius:999px;padding:5px 14px;font-size:0.78rem;font-weight:500;color:var(--ink2);}
+.content-divider{height:1px;background:var(--border);margin:3rem 0;}
+.cs-cta{background:var(--purple);color:#fff;border-radius:14px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:3rem;}
+.cs-cta h3{font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:4px;}
+.cs-cta p{font-size:0.85rem;opacity:0.8;margin:0;}
+.cs-cta a{background:#fff;color:var(--purple);text-decoration:none;border-radius:999px;padding:10px 22px;font-size:0.85rem;font-weight:600;white-space:nowrap;transition:opacity .2s;}
+.cs-cta a:hover{opacity:0.9;}
+@media(max-width:600px){.hero,.content{padding-left:1.25rem;padding-right:1.25rem;}.impact-banner{margin-left:1.25rem;margin-right:1.25rem;padding:1.5rem;}.outcome-grid,.two-col{grid-template-columns:1fr;}.cs-cta{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to portfolio
+  </a>
+  <span class="nav-title">Case Study · Analytics Trust & Stakeholder Visibility</span>
+</nav>
+
+<div class="hero">
+  <div class="cs-tag">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+    Analytics · Mixpanel · Stakeholder Communication
+  </div>
+  <h1>Making analytics<br><em>actually trustworthy</em></h1>
+  <p class="hero-sub">Our Mixpanel setup was a mess I noticed while trying to build a dashboard — duplicate events, no naming standards, and noise that made everything unreadable. I cleaned it up, standardized 200+ events, and built a bi-weekly stakeholder dashboard that finally gave key decision-makers a reliable view of product metrics.</p>
+  <div class="meta-row">
+    <div class="meta-item"><div class="meta-label">Role</div><div class="meta-val">Associate Product Manager</div></div>
+    <div class="meta-item"><div class="meta-label">Company</div><div class="meta-val">A digital verification platform</div></div>
+    <div class="meta-item"><div class="meta-label">Tools</div><div class="meta-val">Mixpanel, Notion, Jira</div></div>
+    <div class="meta-item"><div class="meta-label">Type</div><div class="meta-val">Self-initiated, PM-owned</div></div>
+  </div>
+</div>
+
+<div class="impact-banner">
+  <div class="banner-label">Impact at a glance</div>
+  <div class="impact-grid">
+    <div class="impact-item"><div class="num" style="color:#a78bfa;">200+</div><div class="desc">Mixpanel events audited, standardized, and cleaned</div></div>
+    <div class="impact-item"><div class="num" style="color:#6ee7b7;">Bi-weekly</div><div class="desc">Stakeholder dashboard delivered consistently to key decision-makers</div></div>
+    <div class="impact-item"><div class="num" style="color:#fcd34d;">Self-serve</div><div class="desc">Marketing team can now build their own dashboards reliably</div></div>
+    <div class="impact-item"><div class="num" style="color:#f9a8d4;">Trusted</div><div class="desc">One source of truth — no more conflicting numbers across teams</div></div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="section">
+    <div class="section-num">01 — Context</div>
+    <h2>I found the problem while trying to solve a different one</h2>
+    <p>It started with a simple task: build a Mixpanel dashboard to track product metrics for a bi-weekly stakeholder update. But the moment I opened Mixpanel and started pulling data, something was clearly off.</p>
+    <p>Events had three different names for the same action. Some flows had no tracking at all. Others had events firing for UI elements that didn't lead to any meaningful user behavior — just noise cluttering the system. And there was no documentation anywhere explaining what any of it meant.</p>
+    <div class="callout callout-purple">
+      <div class="callout-label">What I found</div>
+      <p>The data existed — but it couldn't be trusted. And if I couldn't trust it, neither could the stakeholders I was supposed to be reporting to.</p>
+    </div>
+  </div>
+
+  <div class="content-divider"></div>
+
+  <div class="section">
+    <div class="section-num">02 — The Three Problems</div>
+    <h2>It wasn't one issue — it was three compounding each other</h2>
+    <p>After auditing the full Mixpanel setup, I categorized the problems clearly before proposing any solution:</p>
+
+    <div class="two-col">
+      <div class="highlight-card">
+        <div class="hc-label" style="color:var(--purple);">Problem 1</div>
+        <h4>No naming convention</h4>
+        <p>The same user action could be tracked as "button_click", "btn_clicked", or "click_cta_button" — depending on who implemented it and when. Marketing couldn't build dashboards because they didn't know which event to use.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-label" style="color:var(--orange);">Problem 2</div>
+        <h4>Events that didn't earn their place</h4>
+        <p>A significant portion of events tracked pure UI interactions — hover states, passive scrolls, decorative element renders — that generated no actionable insight. They existed only to exist, cluttering every report.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-label" style="color:var(--pink);">Problem 3</div>
+        <h4>No shared understanding</h4>
+        <p>Even within the product team, different people defined the same metric differently. "Activation" meant one thing to product and another to marketing. There was no documentation to resolve the gap.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-label" style="color:var(--yellow);">Consequence</div>
+        <h4>Nobody trusted the data</h4>
+        <p>Stakeholder updates required manual reconciliation every time. The numbers in one report didn't match the numbers in another. And when numbers don't match, decisions don't get made.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote">"The data was there. But nobody could read it — and nobody could agree on what it was saying."</div>
+  </div>
+
+  <div class="content-divider"></div>
+
+  <div class="section">
+    <div class="section-num">03 — What I Did</div>
+    <h2>Fix the foundation first, then build on top of it</h2>
+    <p>I resisted the urge to just build the dashboard and ship it. If the underlying data was wrong, the dashboard would be wrong too. The right order was: clean first, then report.</p>
+
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Full Mixpanel audit — catalogued every event</h4>
+          <p>Went through all 200+ events one by one. Tagged each as: keep, rename, deprecate, or investigate. Built a spreadsheet that became the foundation for everything that followed.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Created an event taxonomy and naming standard</h4>
+          <p>Introduced an Object_Action format (e.g., "onboarding_step_completed" not "completedStep_onboarding"). Documented the convention, its rationale, and examples in Notion — accessible to everyone.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Deprecated events that didn't drive decisions</h4>
+          <p>For every event flagged as "noise," I asked one question: what decision would this data change? If nobody could answer, the event got deprecated. Cleaner data is better than more data.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Worked with engineering to re-instrument over 3 sprints</h4>
+          <p>The cleanup required engineering time. I prioritized by impact — high-traffic flows first — and included re-instrumentation tasks in sprint planning. Made the case for why this was worth the investment.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h4>Built the bi-weekly stakeholder dashboard</h4>
+          <p>With clean data in place, I built the dashboard I originally set out to make — now with metrics that were accurate, consistently defined, and mapped to decisions stakeholders actually needed to make.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <h4>Delivered bi-weekly update cadence to key stakeholders</h4>
+          <p>Made the dashboard a regular touchpoint — not a one-time artifact. Sent a bi-weekly summary with metric highlights, trend callouts, and context for any significant changes. Turned data into narrative.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-yellow">
+      <div class="callout-label">Key decision</div>
+      <p>I kept the bi-weekly update as a curated summary — not just a link to the dashboard. Raw dashboards require interpretation. A narrative with context gets read and acted on.</p>
+    </div>
+  </div>
+
+  <div class="content-divider"></div>
+
+  <div class="section">
+    <div class="section-num">04 — Outcomes</div>
+    <h2>What actually changed</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card">
+        <div class="oc-icon" style="background:var(--purple-light);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6d4aff" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+        <h4>Marketing became self-sufficient</h4>
+        <p>With a clear naming convention and documented event taxonomy, marketing could build their own Mixpanel dashboards without asking PM every time.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-icon" style="background:var(--green-light);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00a878" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h4>Feature decisions got data-backed</h4>
+        <p>Roadmap conversations shifted from "I think users do X" to "here's the data — users do X 3× more than Y." Two features were deprioritized based on low adoption data from the clean dashboard.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-icon" style="background:var(--yellow-light);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9a7200" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h4>Stakeholder trust rebuilt</h4>
+        <p>The bi-weekly update became a consistent touchpoint that leadership relied on. Numbers stopped being questioned because they were now consistently sourced and explained.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-icon" style="background:var(--orange-light);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h4>Documentation that outlasted the work</h4>
+        <p>The Notion event taxonomy became a living document the team still references. New engineers use it when adding tracking. New PMs use it to understand what's already measured.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-divider"></div>
+
+  <div class="section">
+    <div class="section-num">05 — What I Learned</div>
+    <h2>Lessons I'm taking forward</h2>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-num">01</div>
+        <div class="lesson-body">
+          <h4>If you can't trust the data, don't skip the cleanup</h4>
+          <p>It would have been faster to just build the dashboard and present it. But a dashboard built on bad data is worse than no dashboard — it creates false confidence. The slower path was the right one.</p>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lesson-num">02</div>
+        <div class="lesson-body">
+          <h4>Every event should answer a question</h4>
+          <p>I now apply a simple test to every tracking request: "What decision does this data change?" If nobody can answer, the event doesn't ship. This one principle cut our noise by 30%.</p>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lesson-num">03</div>
+        <div class="lesson-body">
+          <h4>Stakeholder communication is a product too</h4>
+          <p>The bi-weekly update wasn't just a report — it was a product with users, feedback loops, and an outcome to optimize for. Treating it that way (clear structure, consistent cadence, narrative framing) made it actually useful.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-divider"></div>
+
+  <div class="section">
+    <div class="section-num">Skills demonstrated</div>
+    <h2>What I used</h2>
+    <div class="tools-row">
+      <span class="tool-badge">Mixpanel</span>
+      <span class="tool-badge">Event taxonomy design</span>
+      <span class="tool-badge">Analytics audit</span>
+      <span class="tool-badge">Naming convention creation</span>
+      <span class="tool-badge">Stakeholder reporting</span>
+      <span class="tool-badge">Notion documentation</span>
+      <span class="tool-badge">Sprint planning</span>
+      <span class="tool-badge">Data storytelling</span>
+      <span class="tool-badge">Cross-functional alignment</span>
+    </div>
+  </div>
+
+  <div class="cs-cta">
+    <div>
+      <h3>Want to talk through this?</h3>
+      <p>Happy to walk through the audit process, the naming system, or how I structured the bi-weekly update.</p>
+    </div>
+    <a href="index.html#contact">Get in touch</a>
+  </div>
+</div>
+</body>
+</html>

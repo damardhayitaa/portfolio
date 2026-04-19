@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Case Study: When No One Can See If the Product Is Working — Damar Dhayita, Product Manager">
+<title>Case Study — When No One Can See If the Product Is Working · Damar Dhayita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --cream:#f5f2ec;--cream2:#ede9e0;
+  --ink:#1a1714;--ink2:#3d3a35;--muted:#7a7570;--hint:#b0aca5;
+  --border:#ddd9d0;--white:#ffffff;
+  --purple:#6d4aff;--purple-light:#ede8ff;
+  --green:#00a878;--green-light:#e0f7f1;
+  --yellow:#f5b800;--yellow-light:#fff8e0;
+  --orange:#ff6b35;--orange-light:#fff0eb;
+  --pink:#ff4d8d;--pink-light:#ffe8f1;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2.5rem;border-bottom:1px solid var(--border);background:rgba(245,242,236,0.92);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+.nav-back{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--muted);font-size:0.82rem;font-weight:500;transition:color .2s;}
+.nav-back:hover{color:var(--ink);}
+.nav-back svg{width:14px;height:14px;}
+.nav-title{font-size:0.82rem;color:var(--muted);}
+.hero{max-width:780px;margin:0 auto;padding:5rem 2.5rem 3rem;}
+.cs-tag{display:inline-flex;align-items:center;gap:6px;background:var(--green-light);color:var(--green);border-radius:999px;padding:5px 14px;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.5rem;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.1;letter-spacing:-0.01em;margin-bottom:1.25rem;}
+.hero h1 em{color:var(--green);font-style:italic;}
+.hero-sub{font-size:1.05rem;color:var(--ink2);line-height:1.75;max-width:560px;margin-bottom:2.5rem;}
+.meta-row{display:flex;flex-wrap:wrap;gap:1rem;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.meta-item{flex:1;min-width:120px;}
+.meta-label{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--hint);margin-bottom:4px;}
+.meta-val{font-size:0.88rem;font-weight:500;color:var(--ink);}
+.impact-banner{background:var(--ink);color:#fff;border-radius:20px;padding:2rem 2.5rem;margin:3rem auto;max-width:780px;}
+.banner-label{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;}
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.5rem;}
+.impact-item .num{font-family:'DM Serif Display',serif;font-size:2.2rem;line-height:1;margin-bottom:4px;}
+.impact-item .desc{font-size:0.78rem;color:rgba(255,255,255,0.55);line-height:1.4;}
+.content{max-width:680px;margin:0 auto;padding:0 2.5rem 6rem;}
+.section{margin-bottom:3.5rem;}
+.section-num{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--hint);margin-bottom:0.5rem;}
+.section h2{font-family:'DM Serif Display',serif;font-size:1.7rem;line-height:1.2;color:var(--ink);margin-bottom:1.25rem;}
+.section p{font-size:0.92rem;color:var(--ink2);line-height:1.8;margin-bottom:1rem;}
+.section p:last-child{margin-bottom:0;}
+.callout{border-radius:14px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.callout-green{background:var(--green-light);border-left:3px solid var(--green);}
+.callout-yellow{background:var(--yellow-light);border-left:3px solid var(--yellow);}
+.callout-purple{background:var(--purple-light);border-left:3px solid var(--purple);}
+.callout-orange{background:var(--orange-light);border-left:3px solid var(--orange);}
+.callout-label{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.callout-green .callout-label{color:var(--green);}
+.callout-yellow .callout-label{color:#9a7200;}
+.callout-purple .callout-label{color:var(--purple);}
+.callout-orange .callout-label{color:var(--orange);}
+.callout p{font-size:0.88rem;color:var(--ink2);line-height:1.7;margin:0;}
+.problem-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin:1.25rem 0;}
+.problem-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;color:var(--ink2);line-height:1.6;}
+.problem-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:0.55em;}
+.process-steps{display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0;}
+.step{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;font-size:0.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-body h4{font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.step-body p{font-size:0.82rem;color:var(--muted);line-height:1.6;margin:0;}
+.pull-quote{font-family:'DM Serif Display',serif;font-size:1.35rem;font-style:italic;color:var(--ink);line-height:1.5;border-left:3px solid var(--green);padding:0.75rem 0 0.75rem 1.5rem;margin:2rem 0;}
+.outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.outcome-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+.outcome-card .oc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:0.75rem;}
+.outcome-card h4{font-size:0.88rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.outcome-card p{font-size:0.8rem;color:var(--muted);line-height:1.5;margin:0;}
+.lessons{display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0;}
+.lesson{display:grid;grid-template-columns:auto 1fr;gap:1rem;}
+.lesson-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--hint);line-height:1;padding-top:2px;}
+.lesson-body h4{font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.lesson-body p{font-size:0.82rem;color:var(--muted);line-height:1.6;margin:0;}
+.tools-row{display:flex;flex-wrap:wrap;gap:8px;margin:1rem 0;}
+.tool-badge{background:#fff;border:1px solid var(--border);border-radius:999px;padding:5px 14px;font-size:0.78rem;font-weight:500;color:var(--ink2);}
+.brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+.brief-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+.brief-card-wide{grid-column:1/-1;}
+.brief-num{font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:6px;}
+.brief-card h4{font-size:0.88rem;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.brief-card ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.brief-card ul li{font-size:0.8rem;color:var(--muted);line-height:1.5;padding-left:0.9rem;position:relative;}
+.brief-card ul li::before{content:'';position:absolute;left:0;top:0.55em;width:4px;height:4px;border-radius:50%;background:var(--border);}
+.content-divider{height:1px;background:var(--border);margin:3rem 0;}
+.cs-cta{background:var(--green);color:#fff;border-radius:14px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:3rem;}
+.cs-cta h3{font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:4px;}
+.cs-cta p{font-size:0.85rem;opacity:0.8;margin:0;}
+.cs-cta a{background:#fff;color:var(--green);text-decoration:none;border-radius:999px;padding:10px 22px;font-size:0.85rem;font-weight:600;white-space:nowrap;transition:opacity .2s;}
+.cs-cta a:hover{opacity:0.9;}
+@media(max-width:600px){.hero,.content{padding-left:1.25rem;padding-right:1.25rem;}.impact-banner{margin-left:1.25rem;margin-right:1.25rem;padding:1.5rem;}.outcome-grid,.brief-grid{grid-template-columns:1fr;}.brief-card-wide{grid-column:auto;}.cs-cta{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-back" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to portfolio
+  </a>
+  <span class="nav-title">Case Study · Government Integration Monitoring</span>
+</nav>
+
+<div class="hero">
+  <div class="cs-tag">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+    B2B · Government Integration · Data Infrastructure
+  </div>
+  <h1>When no one can see if the<br>product is <em>actually working</em></h1>
+  <p class="hero-sub">After months of a complex government integration, the product was live — but nobody had visibility into whether it was performing. I identified the gap, defined what needed to be monitored, and directed the data team to build a dashboard that gave every stakeholder a clear view.</p>
+  <div class="meta-row">
+    <div class="meta-item"><div class="meta-label">Role</div><div class="meta-val">Associate Product Manager</div></div>
+    <div class="meta-item"><div class="meta-label">Company</div><div class="meta-val">A digital verification platform</div></div>
+    <div class="meta-item"><div class="meta-label">Tool</div><div class="meta-val">Holistic (BI dashboard)</div></div>
+    <div class="meta-item"><div class="meta-label">Type</div><div class="meta-val">Proactive gap identification</div></div>
+  </div>
+</div>
+
+<div class="impact-banner">
+  <div class="banner-label">Impact at a glance</div>
+  <div class="impact-grid">
+    <div class="impact-item"><div class="num" style="color:#6ee7b7;">0 → 1</div><div class="desc">Monitoring dashboard built from nothing post-integration</div></div>
+    <div class="impact-item"><div class="num" style="color:#a78bfa;">Full</div><div class="desc">Cross-team visibility — product, business, and ops on same page</div></div>
+    <div class="impact-item"><div class="num" style="color:#fcd34d;">Proactive</div><div class="desc">Issues surfaced before they became escalations</div></div>
+    <div class="impact-item"><div class="num" style="color:#f9a8d4;">Owned</div><div class="desc">PM-directed, data team executed — clear cross-functional ownership</div></div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="section">
+    <div class="section-num">01 — Context</div>
+    <h2>A product that took months to launch — then went dark</h2>
+    <p>Government integrations are never simple. This one involved a long process: proof of concept, regulatory alignment, technical integration, UAT, and finally — go-live. By the time the product launched, the team had been deep in execution mode for months.</p>
+    <p>But the moment it went live, a different problem emerged: nobody had a reliable way to monitor whether it was actually working. There was no dashboard. No shared view. No agreed-upon metrics to watch. The product existed, but its health was invisible.</p>
+    <div class="callout callout-green">
+      <div class="callout-label">The gap I identified</div>
+      <p>We had gone through an extensive process to get the product live — but had no plan for what happens after. No one was watching. And if something broke, we wouldn't know until a user or a partner flagged it.</p>
+    </div>
+  </div>
+
+  <div class="content-divider"></div>
+
+  <div class="section">
+    <div class="section-num">02 — Problem Framing</div>
+    <h2>Defining what "visibility" actually means</h2>
+    <p>Before going to the data team with a request, I needed to define exactly what needed to be monitored — and why. A vague brief produces a vague dashboard. So I structured the monitoring requirements into five distinct areas, each tied to a specific question the team needed to answer.</p>
+
+    <div class="callout callout-green">
+      <div class="callout-label">My brief to the data team</div>
+      <p><em>"Our main objective is to track adoption and understand how users move through the journey — and identify where adoption or failures might occur."</em></p>
+    </div>
+
+    <p>I then broke this down into five concrete areas:</p>
+
+    <div class="brief-grid">
+      <div class="brief-card">
+        <div class="brief-num" style="color:var(--green);">01</div>
+        <h4>Adoption Funnel</h4>
+        <ul>
+          <li>Users selecting the product as certificate provider</li>
+          <li>Certificate request attempts (account linking)</li>
+          <li>Certificates successfully issued</li>
+          <li>Users who complete signing</li>
+        </ul>
+      </div>
+      <div class="brief-card">
+        <div class="brief-num" style="color:var(--purple);">02</div>
+        <h4>Growth Metrics</h4>
+        <ul>
+          <li>Cumulative certificates linked to Coretax</li>
+          <li>Daily new certificate issuance</li>
+          <li>Daily signing volume</li>
+        </ul>
+      </div>
+      <div class="brief-card">
+        <div class="brief-num" style="color:var(--yellow);">03</div>
+        <h4>Transaction Performance</h4>
+        <ul>
+          <li>Successful vs. failed signing transactions</li>
+          <li>Signing success rate</li>
+          <li>Unique signing users per day/week</li>
+        </ul>
+      </div>
+      <div class="brief-card">
+        <div class="brief-num" style="color:var(--orange);">04</div>
+        <h4>Conversion Rates</h4>
+        <ul>
+          <li>Selected → certificate issued</li>
+          <li>Certificate issued → first signing</li>
+          <li>Signing attempt → successful signing</li>
+        </ul>
+      </div>
+      <div class="brief-card brief-card-wide">
+        <div class="brief-num" style="color:var(--pink);">05</div>
+        <h4>Reliability Monitoring</h4>
+        <ul>
+          <li>Signing failures by reason (OTP failure, certificate error, etc.)</li>
+          <li>Overall error rate trend</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Nobody had asked these questions yet — because everyone assumed someone else was watching. I escalated this gap to leadership, presented the structured brief, and proposed the monitoring dashboard as the immediate next step.</p>
+    <div class="pull-quote">"The integration was a success on paper. But 'live' doesn't mean 'healthy' — and nobody had a way to tell the difference."</div>
+  </div>
+
+  <div class="content-divider"></div>
+
+  <div class="section">
+    <div class="section-num">03 — My Approach</div>
+    <h2>Directing without building it myself</h2>
+    <p>This was a case where the right move wasn't to build the dashboard myself — it was to define exactly what needed to be built, and pair closely with the data team to make it happen.</p>
+
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Wrote a structured brief for the data team</h4>
+          <p>Rather than saying "we need a dashboard," I defined five specific monitoring areas: adoption funnel, growth metrics, transaction performance, conversion rates, and reliability monitoring — each with concrete metrics and the question it was meant to answer.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Identified the right stakeholder audience</h4>
+          <p>Different teams needed different views. Business ops needed high-level volume and uptime. Engineering needed error details. Leadership needed trend summaries. I defined which metrics belonged in which view before a single chart was built.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Paired with the data analyst to align on approach</h4>
+          <p>Worked directly with the data analyst to walk through the requirements, clarify data sources, and make decisions together on metric definitions. This wasn't a one-way hand-off — I was involved enough to catch misalignments early.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Reviewed iterations and gave structured feedback</h4>
+          <p>The data team built in Holistic. I reviewed each version against the original requirements — flagging missing metrics, unclear labels, and charts that didn't answer the right question. Two rounds of revision before sign-off.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h4>Socialized the dashboard across teams</h4>
+          <p>Once live, I walked each stakeholder group through the dashboard — explaining what each metric meant, what to watch for, and who to escalate to if something looked off. Made sure it was actually used, not just built.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-yellow">
+      <div class="callout-label">Key decision</div>
+      <p>I chose to use Holistic (the company's existing BI tool) rather than proposing a new tool — reducing friction for adoption. The best dashboard is the one people actually open.</p>
+    </div>
+  </div>
+
+  <div class="content-divider"></div>
+
+  <div class="section">
+    <div class="section-num">04 — Outcomes</div>
+    <h2>From invisible to observable</h2>
+    <div class="outcome-grid">
+      <div class="outcome-card">
+        <div class="oc-icon" style="background:var(--green-light);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00a878" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h4>Full visibility post-launch</h4>
+        <p>For the first time, the team had a shared, reliable view of the integration's health — updated in real time.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-icon" style="background:var(--purple-light);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6d4aff" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4>Cross-team alignment</h4>
+        <p>Business, product, and ops teams were now looking at the same numbers — reducing the "whose data is right?" conversation in every sync.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-icon" style="background:var(--yellow-light);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9a7200" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <h4>Proactive issue detection</h4>
+        <p>Errors and anomalies became visible before they escalated into user complaints or partner inquiries — giving the team time to respond.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="oc-icon" style="background:var(--orange-light);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h4>Operational confidence</h4>
+        <p>Leadership and business ops could answer questions about product performance without pulling in the PM or engineering — self-serve monitoring became the norm.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-divider"></div>
+
+  <div class="section">
+    <div class="section-num">05 — What I Learned</div>
+    <h2>Lessons I'm taking forward</h2>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-num">01</div>
+        <div class="lesson-body">
+          <h4>Launch is not the finish line — observability is</h4>
+          <p>A product that nobody can monitor is functionally incomplete. I now treat post-launch monitoring as a launch requirement, not an afterthought. It goes in the PRD from day one.</p>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lesson-num">02</div>
+        <div class="lesson-body">
+          <h4>Directing well is a skill, not a shortcut</h4>
+          <p>Working through the data team meant I had to be precise about requirements. Vague briefs produce vague dashboards. I learned to define the "so what" for every metric before asking anyone to build it.</p>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="lesson-num">03</div>
+        <div class="lesson-body">
+          <h4>Adoption requires socialization, not just delivery</h4>
+          <p>Building the dashboard wasn't enough — I had to make sure people knew it existed, knew how to read it, and knew what to do with it. A dashboard nobody opens doesn't solve anything.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-divider"></div>
+
+  <div class="section">
+    <div class="section-num">Skills demonstrated</div>
+    <h2>What I used</h2>
+    <div class="tools-row">
+      <span class="tool-badge">Holistic (BI tool)</span>
+      <span class="tool-badge">Proactive gap identification</span>
+      <span class="tool-badge">Requirements definition</span>
+      <span class="tool-badge">Cross-functional direction</span>
+      <span class="tool-badge">Stakeholder communication</span>
+      <span class="tool-badge">Post-launch monitoring</span>
+      <span class="tool-badge">Data storytelling</span>
+    </div>
+  </div>
+
+  <div class="cs-cta">
+    <div>
+      <h3>Want to talk through this?</h3>
+      <p>Happy to go deeper on how I framed the requirements or how this fits into my broader PM approach.</p>
+    </div>
+    <a href="index.html#contact">Get in touch</a>
+  </div>
+</div>
+</body>
+</html>

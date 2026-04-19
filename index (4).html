@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Damar Dhayita Mulya Aryanti — Associate Product Manager based in Indonesia. Experienced in fintech, analytics, cross-functional delivery, and user research.">
+<meta name="keywords" content="Damar Dhayita, Product Manager, APM, Indonesia, VIDA, Portfolio, User Research">
+<meta name="author" content="Damar Dhayita Mulya Aryanti">
+<meta property="og:title" content="Damar Dhayita — Product Manager">
+<meta property="og:description" content="Associate PM who builds with empathy, ships with data, and leads with clarity.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<title>Damar Dhayita — Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --cream:#f5f2ec;--cream2:#ede9e0;
+  --ink:#1a1714;--ink2:#3d3a35;--muted:#7a7570;--hint:#b0aca5;
+  --border:#ddd9d0;--white:#ffffff;
+  --purple:#6d4aff;--purple-light:#ede8ff;
+  --pink:#ff4d8d;--pink-light:#ffe8f1;
+  --yellow:#f5b800;--yellow-light:#fff8e0;
+  --green:#00a878;--green-light:#e0f7f1;
+  --orange:#ff6b35;--orange-light:#fff0eb;
+  --blue:#378add;--blue-light:#e6f1fb;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden;}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(245,242,236,0.92);backdrop-filter:blur(12px);}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-hire{background:var(--ink);color:var(--cream);border:none;border-radius:999px;padding:8px 20px;font-size:0.82rem;font-weight:500;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;transition:opacity .2s;}
+.nav-hire:hover{opacity:0.8;}
+
+.hero{max-width:900px;margin:0 auto;padding:6rem 2.5rem 5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(3rem,6vw,5rem);line-height:1.05;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.5rem;}
+.hero h1 .grad{background:linear-gradient(135deg,var(--purple),var(--pink),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:italic;}
+.hero-desc{font-size:1rem;color:var(--muted);line-height:1.8;max-width:480px;margin-bottom:2rem;}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2.5rem;}
+.btn-primary{background:var(--ink);color:var(--cream);border:none;border-radius:999px;padding:11px 24px;font-size:0.85rem;font-weight:500;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;transition:opacity .2s;display:inline-block;}
+.btn-primary:hover{opacity:0.8;}
+.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--border);border-radius:999px;padding:11px 24px;font-size:0.85rem;font-weight:500;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;transition:border-color .2s,background .2s;display:inline-block;}
+.btn-outline:hover{border-color:var(--ink);background:rgba(0,0,0,0.03);}
+.chip-row{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{border-radius:999px;padding:5px 13px;font-size:0.72rem;font-weight:500;border:1px solid var(--border);background:var(--white);color:var(--ink2);}
+
+.hero-avatar-wrap{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.memoji-caption{font-size:0.72rem;color:var(--hint);text-align:center;}
+
+.section-wrap{border-top:1px solid var(--border);padding:4rem 2.5rem;}
+.inner{max-width:900px;margin:0 auto;}
+.section-label{font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--hint);display:block;margin-bottom:0.75rem;}
+h2.serif{font-family:'DM Serif Display',serif;font-size:2rem;line-height:1.15;color:var(--ink);margin-bottom:0.5rem;}
+.section-sub{color:var(--muted);font-size:0.9rem;margin-bottom:2.5rem;max-width:480px;}
+
+.about-bio{font-size:0.92rem;color:var(--ink2);line-height:1.85;margin-bottom:1rem;}
+.about-bio strong{color:var(--ink);font-weight:600;}
+.about-cards-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.about-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1rem;display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+.about-card-icon{width:32px;height:32px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.about-card h4{font-size:0.8rem;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.about-card p{font-size:0.74rem;color:var(--muted);line-height:1.5;margin:0;}
+
+.exp-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.exp-item{background:var(--white);padding:1.5rem;transition:background .2s;}
+.exp-item:hover{background:#fafaf8;}
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;}
+.exp-role{font-size:0.95rem;font-weight:600;color:var(--ink);}
+.exp-co{font-size:0.82rem;color:var(--purple);font-weight:500;margin-top:2px;}
+.exp-period{font-size:0.72rem;font-weight:500;color:var(--muted);background:var(--cream2);border-radius:999px;padding:4px 11px;white-space:nowrap;flex-shrink:0;}
+.exp-impact{margin-top:10px;font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.exp-impact strong{color:var(--ink2);font-weight:500;}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:1rem;}
+.proj-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:1.75rem;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s;display:block;position:relative;overflow:hidden;}
+.proj-card:hover{border-color:var(--ink);transform:translateY(-2px);}
+.proj-card-accent{position:absolute;top:0;left:0;right:0;height:3px;}
+.proj-type{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:6px;}
+.proj-card h3{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--ink);margin-bottom:0.4rem;line-height:1.2;}
+.proj-tagline{font-size:0.82rem;color:var(--muted);margin-bottom:0.75rem;}
+.proj-desc{font-size:0.82rem;color:var(--ink2);line-height:1.7;margin-bottom:1.25rem;}
+.proj-impact-pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 12px;font-size:0.75rem;font-weight:500;margin-bottom:1rem;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.proj-arrow{position:absolute;bottom:1.75rem;right:1.75rem;width:32px;height:32px;border-radius:50%;background:var(--cream2);display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.proj-card:hover .proj-arrow{background:var(--ink);}
+.proj-card:hover .proj-arrow svg{stroke:#fff;}
+.proj-arrow svg{width:14px;height:14px;stroke:var(--muted);transition:stroke .2s;}
+
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;}
+.skill-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+.skill-card-title{font-size:0.8rem;font-weight:600;margin-bottom:0.75rem;}
+.skill-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.sc{border-radius:999px;padding:4px 11px;font-size:0.72rem;font-weight:500;}
+
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.edu-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.25rem;}
+.edu-card .edu-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;margin-bottom:0.75rem;}
+.edu-card h4{font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:3px;}
+.edu-card .edu-sub{font-size:0.78rem;color:var(--muted);line-height:1.5;}
+.edu-card .edu-year{display:inline-block;margin-top:8px;font-size:0.7rem;font-weight:600;border-radius:999px;padding:3px 10px;}
+
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.contact-left h2{font-family:'DM Serif Display',serif;font-size:2.2rem;line-height:1.1;margin-bottom:0.75rem;}
+.contact-left h2 em{color:var(--purple);font-style:italic;}
+.contact-left p{font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;}
+.contact-socials{display:flex;flex-direction:column;gap:8px;}
+.social-link{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink2);font-size:0.85rem;font-weight:500;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:var(--white);transition:border-color .2s,background .2s;}
+.social-link:hover{border-color:var(--ink);background:var(--cream2);}
+.contact-form{display:flex;flex-direction:column;gap:10px;}
+.contact-form input,.contact-form textarea{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:11px 14px;color:var(--ink);font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;transition:border-color .2s;}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--purple);}
+.contact-form textarea{height:110px;resize:vertical;}
+.contact-form button{background:var(--ink);color:var(--cream);border:none;border-radius:10px;padding:12px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:500;cursor:pointer;transition:opacity .2s;}
+.contact-form button:hover{opacity:0.8;}
+
+footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-size:0.78rem;color:var(--hint);}
+@media(max-width:700px){nav{padding:1rem 1.25rem;}.nav-links{display:none;}.hero{grid-template-columns:1fr;padding:3.5rem 1.25rem 3rem;}.hero-avatar-wrap{display:none;}.section-wrap{padding:3rem 1.25rem;}.about-cards-row{grid-template-columns:1fr 1fr;}.contact-inner,.edu-grid{grid-template-columns:1fr;}.projects-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="#">Damar Dhayita</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-hire" href="#contact">Hire me</a>
+</nav>
+
+<div class="hero" id="home">
+  <div class="hero-left">
+    <h1>Associate<br>Product <span class="grad">Manager</span></h1>
+    <p class="hero-desc">I build products that work for people — starting from research, shaped by data, and delivered with cross-functional teams.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#projects">See my work</a>
+      <a class="btn-outline" href="https://www.linkedin.com/in/damardhayita/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="btn-outline" href="#contact">Get in touch</a>
+    </div>
+    <div class="chip-row">
+      <span class="chip">Product Strategy</span>
+      <span class="chip">User Research</span>
+      <span class="chip">Mixpanel</span>
+      <span class="chip">Agile / Scrum</span>
+      <span class="chip">Roadmapping</span>
+      <span class="chip">Cross-functional</span>
+    </div>
+  </div>
+  <div class="hero-avatar-wrap">
+    <img src="memoji-wave.png" alt="Damar waving hello" width="180" style="display:block;filter:drop-shadow(0 4px 24px rgba(109,74,255,0.12));">
+  </div>
+</div>
+
+<div class="section-wrap" id="about">
+  <div class="inner">
+    <span class="section-label">About me</span>
+    <h2 class="serif">Nice to meet you — I'm Damar.</h2>
+    <p class="section-sub" style="margin-bottom:1.75rem;">Associate Product Manager, based in Jakarta.</p>
+    <p class="about-bio">
+      I got into product management because I care about the <strong>gap between how things are built and how people actually use them</strong>. That curiosity started in design, grew through user research, and now drives the way I approach every product decision.
+    </p>
+    <p class="about-bio">
+      In the past year, I've shipped 6 features end-to-end — including an authentication flow that cut operational costs by <strong>IDR 100M+</strong>, and a product expansion into <strong>Malaysia</strong> while continuing to actively develop and ship for the Indonesian market. I've also built analytics infrastructure from scratch and run the stakeholder reporting that keeps leadership and marketing aligned.
+    </p>
+    <p class="about-bio">
+      Outside of product, I believe the best PMs are curious about people first. I still conduct user research, still read design critique, and still think the most important question in any room is: <strong>who are we actually building this for?</strong>
+    </p>
+    <p class="about-bio" style="margin-bottom:2rem;">
+      Cumlaude graduate of Digital Business at Universitas Padjadjaran (GPA 3.90). Open to PM roles across Southeast Asia.
+    </p>
+    <div class="about-cards-row">
+      <div class="about-card">
+        <div class="about-card-icon" style="background:var(--purple-light);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6d4aff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div><h4>Problem-first thinker</h4><p>I start with "what problem are we solving?" — not "what should we ship next?"</p></div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon" style="background:var(--pink-light);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff4d8d" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><h4>User research advocate</h4><p>From user interviews to heuristic evaluation — I bring the user's voice into every sprint.</p></div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon" style="background:var(--yellow-light);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9a7200" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+        <div><h4>Data-informed decisions</h4><p>Built analytics systems from scratch. Comfortable with Mixpanel, SQL, and Firebase.</p></div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon" style="background:var(--green-light);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00a878" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><h4>Cross-functional glue</h4><p>Comfortable leading delivery across Engineering, Design, Marketing, and Business.</p></div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon" style="background:var(--orange-light);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div><h4>Design sensibility</h4><p>Former UI/UX designer — I speak both PM and designer, and prototype when needed.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-wrap" id="experience">
+  <div class="inner">
+    <span class="section-label">Experience</span>
+    <h2 class="serif">Where I've worked</h2>
+    <p class="section-sub">A quick look — see my CV for the full picture.</p>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-top">
+          <div><div class="exp-role">Associate Product Manager</div><div class="exp-co">VIDA Digital Identity · Jakarta</div></div>
+          <span class="exp-period">Nov 2025 – Present</span>
+        </div>
+        <p class="exp-impact">Owning end-to-end feature delivery, leading product expansion into Malaysia, and building the analytics infrastructure that helps the whole team make faster, cleaner decisions.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-top">
+          <div><div class="exp-role">Product Management Intern</div><div class="exp-co">VIDA Digital Identity · Jakarta</div></div>
+          <span class="exp-period">Jan 2025 – Oct 2025</span>
+        </div>
+        <p class="exp-impact">Wrote PRDs, ran competitor research across Southeast Asia, delivered UX writing across 20+ sprints, and built prototypes that accelerated sign-off between product and engineering.</p>
+      </div>
+      <div class="exp-item">
+        <div class="exp-top">
+          <div><div class="exp-role">UI/UX Designer Intern</div><div class="exp-co">MNC Portal Indonesia · Jakarta</div></div>
+          <span class="exp-period">Feb 2023 – Jun 2023</span>
+        </div>
+        <p class="exp-impact">Designed UI for two live digital platforms, built design system components, and ran UX research including heuristic evaluation and competitive benchmarking.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-wrap" id="projects">
+  <div class="inner">
+    <span class="section-label">Case studies & projects</span>
+    <h2 class="serif">What I've built</h2>
+    <p class="section-sub">Professional case studies + self-initiated and academic projects — click each to read the full story.</p>
+    <div class="projects-grid">
+
+      <a class="proj-card" href="case-study-government-integration.html">
+        <div class="proj-card-accent" style="background:linear-gradient(90deg,#00a878,#6d4aff);"></div>
+        <div class="proj-type" style="color:var(--green);"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>Integration Project · B2B</div>
+        <h3>When no one can see if the product is working</h3>
+        <p class="proj-tagline">Post-launch monitoring for a gov-integrated product</p>
+        <p class="proj-desc">After months of a complex government integration, the product went live with no visibility into whether it was performing. I identified the gap, wrote a structured monitoring brief, and directed the data team to build a dashboard covering adoption, reliability, and conversion.</p>
+        <div class="proj-impact-pill" style="background:var(--green-light);color:var(--green);">0→1 monitoring · Full cross-team visibility</div>
+        <div class="proj-tags"><span class="chip">Holistic</span><span class="chip">Data Infrastructure</span><span class="chip">Stakeholder Mgmt</span></div>
+        <div class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      </a>
+
+      <a class="proj-card" href="case-study-mixpanel-analytics.html">
+        <div class="proj-card-accent" style="background:linear-gradient(90deg,#6d4aff,#ff4d8d);"></div>
+        <div class="proj-type" style="color:var(--purple);"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>Analytics · Stakeholder Communication</div>
+        <h3>Making analytics actually trustworthy</h3>
+        <p class="proj-tagline">Mixpanel event cleanup + bi-weekly stakeholder dashboard</p>
+        <p class="proj-desc">While trying to build a dashboard, I noticed the underlying event data was unreliable. I audited 200+ events, standardized the naming system, deprecated the noise, and rebuilt the reporting layer that marketing and leadership now depend on.</p>
+        <div class="proj-impact-pill" style="background:var(--purple-light);color:var(--purple);">200+ events cleaned · Marketing self-serve</div>
+        <div class="proj-tags"><span class="chip">Mixpanel</span><span class="chip">Event Taxonomy</span><span class="chip">Reporting</span></div>
+        <div class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      </a>
+
+      <div class="proj-section-header">
+        <div class="proj-section-label">Self-initiated & academic projects</div>
+      </div>
+
+      <a class="proj-card" href="case-study-bank-jago.html">
+        <div class="proj-card-accent" style="background:linear-gradient(90deg,#f5b800,#ff4d8d);"></div>
+        <div class="proj-type" style="color:var(--yellow);"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>Fintech · Self-initiated Case Study</div>
+        <h3>Jago Split Bill</h3>
+        <p class="proj-tagline">A feature concept I built independently for Bank Jago</p>
+        <p class="proj-desc">Identified a real pain point in how Gen Z splits group expenses, and built a full product concept in response — personas, MVP scope, user flows, technical requirements, and a press release.</p>
+        <div class="proj-impact-pill" style="background:var(--yellow-light);color:#9a7200;">Full PRD · Figma prototype · Press release</div>
+        <div class="proj-tags"><span class="chip">PRD Writing</span><span class="chip">User Research</span><span class="chip">Figma</span></div>
+        <div class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      </a>
+
+      <a class="proj-card" href="https://damardhayitaa.wixsite.com/portfolio/dooit" target="_blank" rel="noopener noreferrer">
+        <div class="proj-type" style="color:var(--orange);"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>Productivity · 0→1 App</div>
+        <h3>DOOIT</h3>
+        <p class="proj-tagline">Task management app for students & young professionals</p>
+        <p class="proj-desc">End-to-end product design — from user research and problem framing through to a high-fidelity prototype ready for handoff.</p>
+        <div class="proj-impact-pill" style="background:var(--orange-light);color:var(--orange);">User research · Full prototype</div>
+        <div class="proj-tags"><span class="chip">Product Strategy</span><span class="chip">User Research</span><span class="chip">Figma</span></div>
+        <div class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      </a>
+
+      <a class="proj-card" href="https://damardhayitaa.wixsite.com/portfolio/copy-of-dooit" target="_blank" rel="noopener noreferrer">
+        <div class="proj-type" style="color:var(--pink);"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>Marketplace · 2-sided Platform</div>
+        <h3>SEW UP</h3>
+        <p class="proj-tagline">Connecting local tailors with customers</p>
+        <p class="proj-desc">Designed a two-sided marketplace for an underserved niche — covering personas, journey maps, and a go-to-market strategy built on real user gaps.</p>
+        <div class="proj-impact-pill" style="background:var(--pink-light);color:var(--pink);">GTM strategy · Journey mapping</div>
+        <div class="proj-tags"><span class="chip">Market Research</span><span class="chip">GTM</span><span class="chip">Journey Mapping</span></div>
+        <div class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      </a>
+
+      <a class="proj-card" href="https://damardhayitaa.wixsite.com/portfolio/copy-of-sew-up" target="_blank" rel="noopener noreferrer">
+        <div class="proj-type" style="color:var(--blue);"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>Social · Community App</div>
+        <h3>BESTIE</h3>
+        <p class="proj-tagline">Safe space for meaningful friendship & peer support</p>
+        <p class="proj-desc">Social app concept for Gen Z peer wellness — grounded in 10+ user interviews, affinity mapping, and a clearly scoped MVP that came directly from research findings.</p>
+        <div class="proj-impact-pill" style="background:var(--blue-light);color:#185fa5;">10+ user interviews · MVP scoped from research</div>
+        <div class="proj-tags"><span class="chip">User Interviews</span><span class="chip">Affinity Mapping</span><span class="chip">MVP Scoping</span></div>
+        <div class="proj-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<div class="section-wrap" id="skills">
+  <div class="inner">
+    <span class="section-label">Skills & tools</span>
+    <h2 class="serif">My toolkit</h2>
+    <p class="section-sub">What I reach for when researching, defining, and shipping products.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-title" style="color:var(--purple)">Product</div>
+        <div class="skill-chips">
+          <span class="sc" style="background:var(--purple-light);color:var(--purple);">PRD Writing</span>
+          <span class="sc" style="background:var(--purple-light);color:var(--purple);">Roadmapping</span>
+          <span class="sc" style="background:var(--purple-light);color:var(--purple);">OKRs</span>
+          <span class="sc" style="background:var(--purple-light);color:var(--purple);">UAT & QA</span>
+          <span class="sc" style="background:var(--purple-light);color:var(--purple);">User Stories</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title" style="color:var(--pink)">Research & Design</div>
+        <div class="skill-chips">
+          <span class="sc" style="background:var(--pink-light);color:var(--pink);">User Interviews</span>
+          <span class="sc" style="background:var(--pink-light);color:var(--pink);">Usability Testing</span>
+          <span class="sc" style="background:var(--pink-light);color:var(--pink);">Figma</span>
+          <span class="sc" style="background:var(--pink-light);color:var(--pink);">Prototyping</span>
+          <span class="sc" style="background:var(--pink-light);color:var(--pink);">UX Writing</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title" style="color:#9a7200">Data & Analytics</div>
+        <div class="skill-chips">
+          <span class="sc" style="background:var(--yellow-light);color:#9a7200;">Mixpanel</span>
+          <span class="sc" style="background:var(--yellow-light);color:#9a7200;">Firebase</span>
+          <span class="sc" style="background:var(--yellow-light);color:#9a7200;">SQL</span>
+          <span class="sc" style="background:var(--yellow-light);color:#9a7200;">Tableau</span>
+          <span class="sc" style="background:var(--yellow-light);color:#9a7200;">Postman</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title" style="color:var(--green)">Execution</div>
+        <div class="skill-chips">
+          <span class="sc" style="background:var(--green-light);color:var(--green);">Jira</span>
+          <span class="sc" style="background:var(--green-light);color:var(--green);">Confluence</span>
+          <span class="sc" style="background:var(--green-light);color:var(--green);">Notion</span>
+          <span class="sc" style="background:var(--green-light);color:var(--green);">Agile / Scrum</span>
+          <span class="sc" style="background:var(--green-light);color:var(--green);">Miro</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-wrap" id="education">
+  <div class="inner">
+    <span class="section-label">Education & achievements</span>
+    <h2 class="serif">My background</h2>
+    <p class="section-sub">Where I learned to think, lead, and build.</p>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-icon" style="background:var(--purple-light);color:var(--purple);">S1</div>
+        <h4>Bachelor of Digital Business</h4>
+        <div class="edu-sub">Universitas Padjadjaran · GPA 3.90/4.00 — Cumlaude<br>Best GPA Award 2022–2023 · International journal publication on LMS user satisfaction</div>
+        <span class="edu-year" style="background:var(--purple-light);color:var(--purple);">2020 – 2024</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon" style="background:var(--yellow-light);color:#9a7200;">ORG</div>
+        <h4>Chief External Officer — HMBD Unpad</h4>
+        <div class="edu-sub">Led 3 external divisions · IDR 7M+ revenue generated · 100+ media partnerships secured · 3× social media growth in one term</div>
+        <span class="edu-year" style="background:var(--yellow-light);color:#9a7200;">2022</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon" style="background:var(--green-light);color:var(--green);">MURI</div>
+        <h4>MURI World Record</h4>
+        <div class="edu-sub">Mosaik Nyiru dengan Reka Bentuk Terbanyak — led a 30-person creative team, reaching 8,000+ incoming students at Universitas Padjadjaran</div>
+        <span class="edu-year" style="background:var(--green-light);color:var(--green);">2022</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon" style="background:var(--pink-light);color:var(--pink);">AWD</div>
+        <h4>Selected achievements</h4>
+        <div class="edu-sub">1st Place BASIC 3.0 Photography · Finalist BRI Ceria Digicomp Business Case · Best Staff Himagi · Guest Speaker DigiUp Talkshow 2023</div>
+        <span class="edu-year" style="background:var(--pink-light);color:var(--pink);">2021 – 2023</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-wrap" id="contact">
+  <div class="inner">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <span class="section-label">Contact</span>
+        <h2>Let's build something <em>together</em></h2>
+        <p>Open to full-time PM roles, APM programs, and meaningful collaborations. Based in Indonesia — open to Southeast Asia and remote.</p>
+        <div class="contact-socials">
+          <a class="social-link" href="https://www.linkedin.com/in/damardhayita/" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin.com/in/damardhayita
+          </a>
+          <a class="social-link" href="https://www.instagram.com/damar.dhayita" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            @damar.dhayita
+          </a>
+          <a class="social-link" href="mailto:damardhayitaa@gmail.com">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            damardhayitaa@gmail.com
+          </a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <input type="text" placeholder="Your name" aria-label="Name">
+        <input type="email" placeholder="Your email" aria-label="Email">
+        <textarea placeholder="What are you working on? Or just say hi!" aria-label="Message"></textarea>
+        <button type="button" onclick="alert('Connect this to Formspree.io for real email delivery!')">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>Built with Claude · Damar Dhayita Mulya Aryanti · 2025</footer>
+</body>
+</html>
